@@ -1,0 +1,70 @@
+.fetch {
+      padding: 1em 3em;
+    border-radius: 25px;
+    outline: none;
+    border: 1px dotted;
+    background-color: darkgrey;
+    color: white;
+}
+
+.fetch:hover {
+  background-image: linear-gradient(0, rgb(23, 241, 3) 0%, rgb(245, 248, 61) 50%, rgb(3, 213, 241) 100%);
+  color: black;
+  cursor: pointer;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.userList {
+  display: flex;
+  width: 30%;
+  margin: 1em;
+  text-align: start;
+  border: 1px dotted gray;
+  border-radius: 10px;
+  background-color: antiquewhite;
+}
+
+.userList:hover {
+      background-color: palegreen;
+      cursor: pointer;
+}
+
+.userList button {
+  border: 1px dotted gray;
+  border-radius: 10px 0 0 10px;
+  background-color: darkgray;
+  color: white;
+}
+
+.userList button:hover {
+   background-image: linear-gradient(0, rgba(241,3,3,1) 0%, rgba(243,200,200,1) 50%, rgba(241,3,3,1) 100%);
+   color: black;
+   cursor: pointer;
+}
+
+.userList button:hover .tooltiptext {
+  visibility: visible;
+ 
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.text {
+  margin: 0 1em;
+}

@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 // import { } from 'module';
-import { fetchUsers } from "../store/action-creators/user";
+import { fetchUsers, deleteItem } from "../store/action-creators/user";
 import { useTypedSelector } from "../hooks/useTypedSelector";
-import { Dispatch } from "redux";
-import { UserAction, UserActionTypes } from "../types/users";
+import './userList.css';
 
 export const UserList: React.FC = () => {
 
@@ -23,31 +22,28 @@ export const UserList: React.FC = () => {
     return <h1>Error</h1>
   }
 
-  const deleteItem = (id: string) => {
-
-    return (dispatch: Dispatch<UserAction>) => {
-      users = users.filter(el => el.id !== id);
-      dispatch({ type: UserActionTypes.DELETE_USER, payload: users })
-    }
-  }
-
   return (
     <div>
-      <p>List of Users</p>
-      <button onClick={() => dispatch(fetchUsers())}>FETCH_USERS</button>
-      {users.map(el => {
+      <h1>List of Users</h1>
+      <button className="fetch" onClick={() => dispatch(fetchUsers())}>FETCH USERS</button>
+      <div className="list">
+         {users.map(el => {
         const id = el.id;
         return (
-          <div key={id}>
-            <button onClick={() => dispatch(deleteItem(id))}>X</button>
-
-            <span>NAME: {el.name}</span>
-            <span>USERNAME: {el.username}</span>
-            <span>E-MAIL: {el.email}</span>
+          <div key={id} className="userList">
+            <button onClick={() => dispatch(deleteItem(id))}>X
+              <span className="tooltiptext">Delete this User</span></button>
+            <div className="text">
+               <p>NAME: {el.name}</p>
+            <p>USERNAME: {el.username}</p>
+            <p>E-MAIL: {el.email}</p>
+            </div>        
           </div>
         )
       }
       )
       }
+      </div>
+     
     </div>)
 }
