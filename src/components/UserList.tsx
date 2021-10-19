@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Modal } from './Modal';
