@@ -13,6 +13,14 @@
   cursor: pointer;
 }
 
+.search {
+  margin-bottom: 1em;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
 .list {
   display: flex;
   flex-wrap: wrap;
