@@ -33,6 +33,10 @@
       cursor: pointer;
 }
 
+.button {
+  display: flex;
+}
+
 .userList button {
   border: 1px dotted gray;
   border-radius: 10px 0 0 10px;
@@ -48,7 +52,10 @@
 
 .userList button:hover .tooltiptext {
   visibility: visible;
- 
+}
+
+.list-text {
+  width: 100%
 }
 
 .tooltiptext {
